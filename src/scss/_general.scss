@@ -1,0 +1,86 @@
+html,
+body {
+  accent-color: $color-primary;
+  color: $text-color-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 980px) {
+    font-size: 14px;
+  }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  main {
+    flex: 1;
+  }
+}
+
+//Links
+
+a {
+  color: currentColor;
+  &:hover {
+    color: currentColor;
+  }
+}
+
+strong {
+  font-family: 'Montserrat Bold';
+}
+
+.font-secondary {
+  font-family: 'Gilroy';
+  font-weight: 500;
+}
+.font-secondary-bold {
+  font-family: 'Gilroy Bold';
+  font-weight: bold;
+}
+
+//Colors
+
+.text-primary {
+  color: $color-primary;
+}
+
+.bg-primary {
+  background-color: $color-primary;
+}
+.bg-secondary {
+  background-color: #e6e6e6;
+}
+
+svg {
+  fill: currentColor;
+  polyline {
+    stroke: currentColor;
+  }
+  line {
+    stroke: currentColor;
+  }
+}
+
+.text-wrap {
+  text-wrap: balance;
+}
+
+.fade-in {
+  animation: fadeIn ease 0.3s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #1a1a1a;
+}
