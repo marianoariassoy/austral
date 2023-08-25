@@ -27,20 +27,32 @@ const Header = () => {
         <nav className='hidden lg:inline-block'>
           <ul className='flex gap-x-8 font-secondary'>
             <li>
-              <a
-                href='#home'
-                className='scroll hover-underline-animation'
-              >
-                Home
-              </a>
+              {isActiveVentilacion || isActiveAire ? (
+                <Link href='/home'>
+                  <a className='hover-underline-animation'>Home</a>
+                </Link>
+              ) : (
+                <a
+                  href='#home'
+                  className='scroll hover-underline-animation'
+                >
+                  Home
+                </a>
+              )}
             </li>
             <li>
-              <a
-                href='#somosaustral'
-                className='scroll hover-underline-animation'
-              >
-                Somos Austral
-              </a>
+              {isActiveVentilacion || isActiveAire ? (
+                <Link href='/somosaustral'>
+                  <a className='hover-underline-animation'>Somos Austral</a>
+                </Link>
+              ) : (
+                <a
+                  href='#somosaustral'
+                  className='scroll hover-underline-animation'
+                >
+                  Somos Austral
+                </a>
+              )}
             </li>
             <li
               onClick={openSubMenu}
@@ -66,28 +78,46 @@ const Header = () => {
               </div>
             </li>
             <li>
-              <a
-                href='#servicios'
-                className='scroll hover-underline-animation'
-              >
-                Servicios
-              </a>
+              {isActiveVentilacion || isActiveAire ? (
+                <Link href='/servicios'>
+                  <a className='hover-underline-animation'>Servicios</a>
+                </Link>
+              ) : (
+                <a
+                  href='#servicios'
+                  className='scroll hover-underline-animation'
+                >
+                  Servicios
+                </a>
+              )}
             </li>
             <li>
-              <a
-                href='#clientes'
-                className='scroll hover-underline-animation'
-              >
-                Nuestros Clientes
-              </a>
+              {isActiveVentilacion || isActiveAire ? (
+                <Link href='/clientes'>
+                  <a className='hover-underline-animation'>Nuestros Clientes</a>
+                </Link>
+              ) : (
+                <a
+                  href='#clientes'
+                  className='scroll hover-underline-animation'
+                >
+                  Nuestros Clientes
+                </a>
+              )}
             </li>
             <li className='mx-8'>
-              <a
-                href='#contacto'
-                className='scroll hover-underline-animation'
-              >
-                Contacto
-              </a>
+              {isActiveVentilacion || isActiveAire ? (
+                <Link href='/contacto'>
+                  <a className='hover-underline-animation'>Contacto</a>
+                </Link>
+              ) : (
+                <a
+                  href='#contacto'
+                  className='scroll hover-underline-animation'
+                >
+                  Contacto
+                </a>
+              )}
             </li>
           </ul>
         </nav>

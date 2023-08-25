@@ -9,6 +9,7 @@ import Contacto from './Contacto'
 const Index = () => {
   const [location] = useLocation()
   useEffect(() => {
+    if (location === '/') return
     const target = location.replace('/', '#') as string
     const targetElement = document.querySelector(`${target}`) as HTMLElement
     window.scrollTo({
