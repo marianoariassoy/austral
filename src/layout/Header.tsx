@@ -16,12 +16,20 @@ const Header = () => {
   return (
     <section className='fixed w-full px-8 lg:px-16 py-12 flex justify-between text-white z-50 bg-primary'>
       <div>
-        <a
-          href='#home'
-          className='scroll hover:blur-sm logo'
-        >
-          <Logo />
-        </a>
+        {isActiveVentilacion || isActiveAire ? (
+          <Link href='/home'>
+            <a className='hover:blur-sm logo'>
+              <Logo />
+            </a>
+          </Link>
+        ) : (
+          <a
+            href='#home'
+            className='scroll hover:blur-sm logo'
+          >
+            <Logo />
+          </a>
+        )}
       </div>
       <div className='mt-4 flex gap-x-8 items-center'>
         <nav className='hidden lg:inline-block'>
