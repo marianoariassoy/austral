@@ -1,12 +1,14 @@
 import { Logo, Down } from '../icons/icons'
 import Social from '../components/Social'
-import { Link } from 'wouter'
+import { Link, useRoute } from 'wouter'
 const Header = () => {
+  const [isActiveVentilacion] = useRoute('/ventilacion')
+  const [isActiveAire] = useRoute('/aire-acondicionado')
+
   const OpenMenu = () => {
     document.querySelector('.nav-menu')?.classList.toggle('active')
     document.querySelector('.menu-mobile')?.classList.toggle('hidden')
   }
-
   const openSubMenu = () => {
     document.querySelector('.submenu-item')?.classList.toggle('hidden')
   }
@@ -51,10 +53,14 @@ const Header = () => {
               <div className='submenu-item absolute hidden'>
                 <div className='flex flex-col  items-start'>
                   <Link href='/ventilacion'>
-                    <a className='hover-underline-animation'>Ventilación</a>
+                    <a className={` ${isActiveVentilacion ? 'font-secondary-bold' : 'hover-underline-animation'}`}>
+                      Ventilación
+                    </a>
                   </Link>
                   <Link href='/aire-acondicionado'>
-                    <a className='hover-underline-animation'>Aire Acondicionado</a>
+                    <a className={` ${isActiveAire ? 'font-secondary-bold' : 'hover-underline-animation'}`}>
+                      Aire Acondicionado
+                    </a>
                   </Link>
                 </div>
               </div>

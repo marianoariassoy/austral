@@ -1,8 +1,11 @@
 import { nav } from '../data/data'
 import { Down } from '../icons/icons'
-import { Link } from 'wouter'
+import { Link, useRoute } from 'wouter'
 
 const Menu = () => {
+  const [isActiveVentilacion] = useRoute('/ventilacion')
+  const [isActiveAire] = useRoute('/aire-acondicionado')
+
   const closeMenu = () => {
     document.querySelector('.nav-menu')?.classList.toggle('active')
     document.querySelector('.menu-mobile')?.classList.toggle('hidden')
@@ -10,27 +13,42 @@ const Menu = () => {
 
   return (
     <nav
-      className='fixed fade-in w-full h-full text-white top-0 text-center grid content-center hidden menu-mobile z-40'
+      className='fixed fade-in w-full h-full text-white bg-primary top-0 text-center grid content-center menu-mobile z-40 hidden'
       onClick={closeMenu}
     >
       <ul className='flex flex-col gap-y-4 font-secondary text-xl'>
         {nav.map(item => (
           <li key={item.id}>
-            <a
-              href={item.path}
-              className='scroll flex justify-center hover:text-black'
-            >
-              <div className='flex items-center gap-x-2'>
-                {item.title} {item.id === 3 && <Down />}
-              </div>
-            </a>
+            {isActiveVentilacion || isActiveAire ? (
+              <Link href={`/${item.path?.substring(1)}`}>
+                <a className='flex justify-center hover:text-black'>
+                  <div className='flex items-center gap-x-2'>
+                    {item.title} {item.id === 3 && <Down />}
+                  </div>
+                </a>
+              </Link>
+            ) : (
+              <a
+                href={item.path}
+                className='scroll flex justify-center hover:text-black'
+              >
+                <div className='flex items-center gap-x-2'>
+                  {item.title} {item.id === 3 && <Down />}
+                </div>
+              </a>
+            )}
+
             {item.id === 3 && (
               <div className='flex flex-col'>
                 <Link href='/ventilacion'>
-                  <a className='hover-underline-animation'>Ventilación</a>
+                  <a className={`${isActiveVentilacion ? 'font-secondary-bold' : 'hover-underline-animation'}`}>
+                    Ventilación
+                  </a>
                 </Link>
                 <Link href='/aire-acondicionado'>
-                  <a className='hover-underline-animation'>Aire Acondicionado</a>
+                  <a className={`${isActiveAire ? 'font-secondary-bold' : 'hover-underline-animation'}`}>
+                    Aire Acondicionado
+                  </a>
                 </Link>
               </div>
             )}

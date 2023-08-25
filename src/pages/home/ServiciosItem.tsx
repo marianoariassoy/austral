@@ -20,7 +20,7 @@ const ServiciosItem = () => {
           Nuestro servicio de elaboración de proyectos, provisión e instalación abarca un amplio espectro de sistemas,
           entre otros:
         </p>
-        <div className='text-primary flex justify-end my-4 lg:mb-24 lg:mt-8 '>
+        <div className='text-primary flex justify-end my-4 lg:mb-16 lg:mt-8'>
           <Bar />
         </div>
 

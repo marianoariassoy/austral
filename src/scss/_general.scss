@@ -46,9 +46,12 @@ strong {
 .text-primary {
   color: $color-primary;
 }
+.text-secondary {
+  color: #999999;
+}
 
 .bg-primary {
-  background-color: $color-primary;
+  background-color: $color-primary !important;
 }
 .bg-secondary {
   background-color: #e6e6e6;
