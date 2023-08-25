@@ -5,6 +5,16 @@ import BeatLoader from 'react-spinners/BeatLoader'
 import { dataContact } from '../data/data'
 
 const Form = () => {
+  type Inputs = {
+    name: string
+    city: string
+    email: string
+    location: string
+    phone: string
+    country: string
+    message: string
+  }
+
   const lan = 'es'
   const [sended, setSended] = useState(false)
   const [sending, setSending] = useState(false)
@@ -16,12 +26,12 @@ const Form = () => {
     formState: { errors }
   } = useForm()
 
-  const onSubmit = data => {
+  const onSubmit = (data: Inputs) => {
     setSending(true)
     const sender = {
       to: '',
       from: '',
-      from_name: 'Wichay',
+      from_name: 'Austral Ingeniería',
       subject: 'Contacto'
     }
 
