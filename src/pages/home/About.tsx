@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <section
-      className='py-12 lg:py-28 bg-white'
+      className='py-12 lg:py-16 bg-white section'
       id='somosaustral'
     >
       <div className='flex flex-col gap-y-4 text-wrap m-auto max-w-4xl pr-8'>

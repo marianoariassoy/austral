@@ -12,15 +12,15 @@ const ServiciosItem = () => {
   return (
     <article className='h-full lg:flex'>
       <section className='w-full lg:w-2/5 lg:h-screen relative'>{!loading && <Slider data={data} />}</section>
-      <section className='lg:w-3/5 py-20 px-8 lg:pl-20 lg:pr-32 lg:pt-36'>
-        <h1 className='text-5xl lg:text-7xl text-primary mb-4'>
+      <section className='py-20 px-8 lg:pl-16 lg:pr-32 lg:w-3/5 xl:pt-16 2xl:pt-40'>
+        <h1 className='text-5xl text-primary mb-4 lg:text-6xl'>
           <strong>SERVICIOS</strong>
         </h1>
-        <p className='text-wrap lg:text-xl'>
+        <p className='text-wrap'>
           Nuestro servicio de elaboración de proyectos, provisión e instalación abarca un amplio espectro de sistemas,
           entre otros:
         </p>
-        <div className='text-primary flex justify-end my-4 lg:mb-16 lg:mt-8'>
+        <div className='text-primary flex justify-end my-4 lg:my-8'>
           <Bar />
         </div>
 

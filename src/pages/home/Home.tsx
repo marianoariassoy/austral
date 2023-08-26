@@ -18,7 +18,10 @@ const Home = () => {
   }, [])
 
   return (
-    <section id='home'>
+    <section
+      className='section'
+      id='home'
+    >
       <div className='text-wrap max-w-4xl px-8 lg:px-24 py-12 pt-48 text-white '>
         <strong>Austral</strong> nace con una clara vocación para dar un servicio de calidad en el sector de la
         climatización, aunque somos una empresa joven tenemos más de 20 años de experiencia en el sector.
@@ -33,7 +36,7 @@ const Home = () => {
 
       <div className='flex justify-end'>
         <div className='w-9/12'>
-          <section className='relative aspect-[4/5] lg:aspect-[6/4] bg-gray-200'>
+          <section className='relative aspect-[4/5] lg:aspect-[6/4] cover bg-center bg-cover'>
             {!loading && <Slider data={data} />}
           </section>
           <About />

@@ -1,3 +1,18 @@
+.cover {
+  background-image: url(./images/cover.webp);
+}
+
+.header-small {
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  .logo {
+    svg {
+      width: 140px;
+      height: auto;
+    }
+  }
+}
+
 .indicators {
   bottom: 2rem;
   position: absolute;
@@ -5,9 +20,6 @@
   z-index: 30;
   li {
     margin: 0 0.3rem !important;
-    // button::before {
-    //   background-color: white;
-    // }
   }
 }
 
@@ -35,7 +47,7 @@
   transform: scaleX(0);
   height: 2px;
   bottom: -4px;
-  left: 1px;
+  left: 0;
   background-color: currentColor;
   transform-origin: bottom left;
   transition: transform 0.2s ease-out;
@@ -49,7 +61,7 @@
 .logo {
   svg {
     @media (max-width: 980px) {
-      width: 150px;
+      width: 140px;
       height: auto;
     }
   }
@@ -113,4 +125,14 @@
       width: auto;
     }
   }
+}
+
+.nav-active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+.p-submenu {
+  padding-bottom: 4rem !important;
 }

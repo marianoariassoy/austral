@@ -22,7 +22,7 @@ const Servicios = () => {
 
   return (
     <section
-      className='lg:h-screen bg-secondary'
+      className='lg:h-screen bg-secondary section'
       id='servicios'
     >
       <Slide {...properties}>

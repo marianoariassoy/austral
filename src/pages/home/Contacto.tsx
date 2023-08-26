@@ -3,9 +3,12 @@ import { Bar } from '../../icons/icons'
 
 const Contact = () => {
   return (
-    <section id='contacto'>
-      <div className='px-8 py-20 lg:py-36 m-auto max-w-3xl text-primary'>
-        <h1 className='text-5xl lg:text-7xl mb-8'>
+    <section
+      className='section'
+      id='contacto'
+    >
+      <div className='px-8 py-20 lg:py-28 m-auto max-w-3xl text-primary'>
+        <h1 className='text-5xl lg:text-6xl mb-8'>
           <strong>CONTACTO</strong>
         </h1>
 

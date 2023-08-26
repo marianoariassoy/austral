@@ -11,10 +11,11 @@ const Header = () => {
   }
   const openSubMenu = () => {
     document.querySelector('.submenu-item')?.classList.toggle('hidden')
+    document.querySelector('header section')?.classList.toggle('p-submenu')
   }
 
   return (
-    <section className='fixed w-full px-8 lg:px-16 py-12 flex justify-between text-white z-50 bg-primary'>
+    <section className='fixed w-full px-8 lg:px-16 py-12 flex justify-between text-white z-50 bg-primary transition-all'>
       <div>
         {isActiveVentilacion || isActiveAire ? (
           <Link href='/home'>
@@ -32,7 +33,7 @@ const Header = () => {
         )}
       </div>
       <div className='mt-4 flex gap-x-8 items-center'>
-        <nav className='hidden lg:inline-block'>
+        <nav className='hidden lg:inline-block nav-main'>
           <ul className='flex gap-x-8 font-secondary'>
             <li>
               {isActiveVentilacion || isActiveAire ? (
