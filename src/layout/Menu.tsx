@@ -41,14 +41,10 @@ const Menu = () => {
             {item.id === 3 && (
               <div className='flex flex-col'>
                 <Link href='/ventilacion'>
-                  <a className={`${isActiveVentilacion ? 'font-secondary-bold' : 'hover-underline-animation'}`}>
-                    Ventilación
-                  </a>
+                  <a className={`${isActiveVentilacion ? 'nav-active' : 'hover-underline-animation'}`}>Ventilación</a>
                 </Link>
                 <Link href='/aire-acondicionado'>
-                  <a className={`${isActiveAire ? 'font-secondary-bold' : 'hover-underline-animation'}`}>
-                    Aire Acondicionado
-                  </a>
+                  <a className={`${isActiveAire ? 'nav-active' : 'hover-underline-animation'}`}>Aire Acondicionado</a>
                 </Link>
               </div>
             )}
