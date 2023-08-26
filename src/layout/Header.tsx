@@ -67,21 +67,15 @@ const Header = () => {
               onClick={openSubMenu}
               className='cursor-pointer'
             >
-              <div className='flex gap-x-2 items-center'>
-                Productos <Down />
-              </div>
+              <a className='hover-underline-animation'>Productos</a>
 
               <div className='submenu-item absolute hidden'>
                 <div className='flex flex-col  items-start'>
                   <Link href='/ventilacion'>
-                    <a className={` ${isActiveVentilacion ? 'font-secondary-bold' : 'hover-underline-animation'}`}>
-                      Ventilación
-                    </a>
+                    <a className={` ${isActiveVentilacion ? 'nav-active' : 'hover:opacity-70'}`}>Ventilación</a>
                   </Link>
                   <Link href='/aire-acondicionado'>
-                    <a className={` ${isActiveAire ? 'font-secondary-bold' : 'hover-underline-animation'}`}>
-                      Aire Acondicionado
-                    </a>
+                    <a className={` ${isActiveAire ? 'nav-active' : 'hover:opacity-70'}`}>Aire Acondicionado</a>
                   </Link>
                 </div>
               </div>

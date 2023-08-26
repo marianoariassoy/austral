@@ -11,7 +11,7 @@ const scroll = () => {
     const targetId = this.getAttribute('href')
     const targetElement = document.querySelector(targetId)
     window.scrollTo({
-      top: targetElement.offsetTop,
+      top: targetElement.offsetTop - 80,
       behavior: 'smooth'
     })
   }

@@ -13,6 +13,14 @@
   }
 }
 
+header section {
+  .logo {
+    svg {
+      transition: all 0.15s ease-in-out;
+    }
+  }
+}
+
 .indicators {
   bottom: 2rem;
   position: absolute;
