@@ -67,7 +67,12 @@ const Header = () => {
               onClick={openSubMenu}
               className='cursor-pointer'
             >
-              <a className='hover-underline-animation'>Productos</a>
+              <a className='hover-underline-animation'>
+                <span className='inline-block'>Productos</span>
+                <span className='inline-block ml-1'>
+                  <Down />
+                </span>
+              </a>
 
               <div className='submenu-item absolute hidden'>
                 <div className='flex flex-col  items-start'>
