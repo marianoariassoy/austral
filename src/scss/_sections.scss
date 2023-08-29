@@ -144,3 +144,9 @@ header section {
 .p-submenu {
   padding-bottom: 4rem !important;
 }
+
+.strong-primary {
+  strong {
+    color: $color-primary;
+  }
+}

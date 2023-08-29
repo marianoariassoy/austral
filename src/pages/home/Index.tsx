@@ -11,6 +11,7 @@ const Index = () => {
   useEffect(() => {
     if (location === '/') return
     const target = location.replace('/', '#') as string
+
     const targetElement = document.querySelector(`${target}`) as HTMLElement
     window.scrollTo({
       top: targetElement.offsetTop,

@@ -2,16 +2,18 @@ import { useEffect } from 'react'
 import Slider from '../../components/Slider'
 import Whatsapp from '../../components/WaComponent'
 import useFetch from '../../hooks/useFetch'
-import About from './About'
 import scroll from '../../utils/scroll'
 import { Iso } from '../../icons/icons'
+import About from './About'
+import TextHTML from '../../hooks/useHTML'
 
 type DataProps = {
-  data: null | Array<{ id: number; image: string }>
+  data: null | Array<{ id: number; image: string; text?: string }>
   loading: boolean
 }
 const Home = () => {
   const { data, loading } = useFetch(`/home`) as DataProps
+  const { data: dataTexts, loading: loadingTexts } = useFetch(`/textos`) as DataProps
 
   useEffect(() => {
     scroll()
@@ -22,9 +24,8 @@ const Home = () => {
       className='section'
       id='home'
     >
-      <div className='text-wrap max-w-4xl px-8 lg:px-24 py-12 pt-48 text-white '>
-        <strong>Austral</strong> nace con una clara vocación para dar un servicio de calidad en el sector de la
-        climatización, aunque somos una empresa joven tenemos más de 20 años de experiencia en el sector.
+      <div className='text-wrap max-w-4xl px-8 lg:px-24 py-12 pt-48 text-white text-wrap'>
+        {!loadingTexts && <TextHTML text={dataTexts[0].text} />}
       </div>
       <div className='absolute z-30 left-0 px-8 lg:px-24'>
         <img

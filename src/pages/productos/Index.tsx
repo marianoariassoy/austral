@@ -4,18 +4,32 @@ import 'react-slideshow-image/dist/styles.css'
 import { Back, Forward } from '../../icons/icons'
 import ProductosItem from './ProductosItem'
 import { useEffect } from 'react'
+import useFetch from '../../hooks/useFetch'
+import Loader from '../../components/Loader'
+import { useLocation } from 'wouter'
 
 const Index = () => {
+  const [location] = useLocation()
+  const { data, loading } = useFetch(location)
+
   useEffect(() => {
     window.scrollTo(0, 0)
     const header = document.querySelector('header section')
     const menu = document.querySelector('.menu-mobile')
+
     header?.classList.remove('bg-primary')
     header?.classList.add('text-primary')
     menu?.classList.remove('bg-primary')
     menu?.classList.add('text-primary')
     menu?.classList.add('bg-white')
-  }, [])
+  }, [data])
+
+  if (loading)
+    return (
+      <div>
+        <Loader />
+      </div>
+    )
 
   const properties = {
     prevArrow: (
@@ -38,9 +52,12 @@ const Index = () => {
     <Layout>
       <div className='text-primary'>
         <Slide {...properties}>
-          <ProductosItem />
-          <ProductosItem />
-          <ProductosItem />
+          {data.map(item => (
+            <ProductosItem
+              key={item.id}
+              data={item}
+            />
+          ))}
         </Slide>
       </div>
     </Layout>

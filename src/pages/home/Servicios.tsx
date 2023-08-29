@@ -2,7 +2,11 @@ import ServiciosItem from './ServiciosItem'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 import { Back, Forward } from '../../icons/icons'
+import useFetch from '../../hooks/useFetch'
+
 const Servicios = () => {
+  const { data } = useFetch(`/servicios`)
+
   const properties = {
     prevArrow: (
       <button className='text-primary ml-8 hover:-translate-x-0.5 transition-all back-button'>
@@ -25,11 +29,16 @@ const Servicios = () => {
       className='lg:h-screen bg-secondary section'
       id='servicios'
     >
-      <Slide {...properties}>
-        <ServiciosItem />
-        <ServiciosItem />
-        <ServiciosItem />
-      </Slide>
+      {data && (
+        <Slide {...properties}>
+          {data.map(item => (
+            <ServiciosItem
+              key={item.id}
+              data={item}
+            />
+          ))}
+        </Slide>
+      )}
     </section>
   )
 }

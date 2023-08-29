@@ -7,13 +7,13 @@ type DataProps = {
   loading: boolean
 }
 
-const ProductosItem = () => {
-  const { data, loading } = useFetch(`/home`) as DataProps
+const ProductosItem = ({ data }) => {
+  const { data: dataImages, loading: loadingImages } = useFetch(`/imagenes/${data.id}`) as DataProps
 
   return (
     <article className='h-full lg:flex '>
       <section className='w-full aspect-square lg:aspect-auto lg:w-2/5 lg:h-screen relative'>
-        {!loading && <Slider data={data} />}
+        {!loadingImages && <Slider data={dataImages} />}
       </section>
 
       <section className='pt-20 px-8 lg:pl-20 lg:pr-32 xl:pt-36 2xl:pt-48 lg:w-3/5'>
@@ -21,23 +21,19 @@ const ProductosItem = () => {
           <strong>Productos</strong>
         </h1>
         <h1 className='text-5xl lg:text-6xl text-primary'>
-          <strong>Aire Acondiconado</strong>
+          <strong>{data.section}</strong>
         </h1>
         <div className='text-secondary flex justify-end my-4 lg:my-8'>
           <Bar />
         </div>
         <section className='flex flex-col  max-w-3xl text-xl gap-y-2 lg:gap-y-4 lg:text-3xl'>
           <h2 className='text-primary'>
-            <strong>Cortina de aire frio calor</strong>
+            <strong>{data.title}</strong>
           </h2>
           <h3 className='text-secondary'>
             <strong>Características</strong>
           </h3>
-          <p className='text-wrap text-base'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste unde modi est assumenda culpa, autem, quisquam
-            quidem a suscipit minus, tempore perspiciatis exercitationem possimus doloremque dicta earum aut blanditiis
-            eius.
-          </p>
+          <p className='text-wrap text-base'>{data.text}</p>
         </section>
       </section>
     </article>

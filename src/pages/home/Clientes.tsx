@@ -1,5 +1,15 @@
 import { Bar } from '../../icons/icons'
+import TextHTML from '../../hooks/useHTML'
+import useFetch from '../../hooks/useFetch'
+
+type DataProps = {
+  data: null | Array<{ id: number; text: string }>
+  loading: boolean
+}
+
 const Clientes = () => {
+  const { data: dataTexts, loading: loadingTexts } = useFetch(`/textos`) as DataProps
+
   return (
     <section
       className='bg-primary text-white section'
@@ -14,13 +24,7 @@ const Clientes = () => {
             <Bar />
           </div>
         </div>
-        <div>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum saepe aliquid quos a quis corrupti fugit enim
-          consectetur. Corrupti assumenda, placeat vitae cupiditate sed facere quasi atque impedit illum explicabo!
-          <br /> <br />
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum saepe aliquid quos a quis corrupti fugit enim
-          consectetur. Corrupti assumenda, placeat vitae cupiditate sed facere quasi atque impedit illum explicabo!
-        </div>
+        <div>{!loadingTexts && <TextHTML text={dataTexts[2].text} />}</div>
       </div>
     </section>
   )
