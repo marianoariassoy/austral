@@ -15,7 +15,7 @@ const Header = () => {
   }
 
   return (
-    <section className='fixed w-full px-8 lg:px-16 py-12 flex justify-between text-white z-50 bg-primary transition-all'>
+    <section className='fixed w-full px-8 lg:px-16 py-12 flex justify-between text-white z-50 bg-primary transition-all overflow-hidden'>
       <div>
         {isActiveVentilacion || isActiveAire ? (
           <Link href='/home'>
@@ -75,7 +75,7 @@ const Header = () => {
               </a>
 
               <div className='submenu-item absolute hidden'>
-                <div className='flex flex-col  items-start'>
+                <div className='flex flex-col gap-y-1 mt-1 items-start'>
                   <Link href='/ventilacion'>
                     <a className={` ${isActiveVentilacion ? 'nav-active' : 'hover:opacity-70'}`}>Ventilación</a>
                   </Link>

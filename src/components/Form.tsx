@@ -29,13 +29,13 @@ const Form = () => {
   const onSubmit = (data: Inputs) => {
     setSending(true)
     const sender = {
-      to: '',
-      from: '',
+      to: 'australclimatizacion.ing@gmail.com',
+      from: 'no-reply@australclimatizacion.com',
       from_name: 'Austral Ingeniería',
       subject: 'Contacto'
     }
 
-    axios.post('https://wichay.com.ar/backend/send-email.php', { ...data, ...sender }).then(data => {
+    axios.post('http://australclimatizacion.com/backend/send-email.php', { ...data, ...sender }).then(data => {
       if (data.data === 'success') {
         setSended(true)
         setSending(false)

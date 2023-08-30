@@ -27,11 +27,11 @@ const Home = () => {
       <div className='text-wrap max-w-4xl px-8 lg:px-24 py-12 pt-48 text-white text-wrap'>
         {!loadingTexts && <TextHTML text={dataTexts[0].text} />}
       </div>
-      <div className='absolute z-30 left-0 px-8 lg:px-24'>
+      <div className='absolute z-30 left-0 px-8 pt-4 lg:px-24'>
         <img
           src='./images/home.svg'
           alt='austral'
-          className='w-[58vw] lg:w-[38vw]'
+          className='w-[60vw] lg:w-[36vw]'
         />
       </div>
 
