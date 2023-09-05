@@ -10,26 +10,6 @@ function App() {
         component={Home}
       />
       <Route
-        path='/home'
-        component={Home}
-      />
-      <Route
-        path='/somosaustral'
-        component={Home}
-      />
-      <Route
-        path='/servicios'
-        component={Home}
-      />
-      <Route
-        path='/clientes'
-        component={Home}
-      />
-      <Route
-        path='/contacto'
-        component={Home}
-      />
-      <Route
         path='/ventilacion'
         component={Productos}
       />

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-const apiUrl = 'http://australclimatizacion.com/backend/api'
+const apiUrl = 'https://australingenieriasalta.com/backend/api'
 import axios from 'axios'
 
 type Data = string
