@@ -1,14 +1,10 @@
-import { Route } from 'wouter'
+import { Route, Switch } from 'wouter'
 import Home from './pages/home/Index'
 import Productos from './pages/productos/Index'
 
 function App() {
   return (
-    <>
-      <Route
-        path='/'
-        component={Home}
-      />
+    <Switch>
       <Route
         path='/ventilacion'
         component={Productos}
@@ -17,11 +13,8 @@ function App() {
         path='/aire-acondicionado'
         component={Productos}
       />
-      <Route
-        path='*'
-        component={Home}
-      />
-    </>
+      <Route component={Home} />
+    </Switch>
   )
 }
 

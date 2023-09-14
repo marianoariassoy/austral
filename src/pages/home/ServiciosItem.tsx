@@ -36,7 +36,7 @@ const ServiciosItem = ({ data }) => {
           <h2 className='text-3xl text-primary'>
             <strong>{data.title}</strong>
           </h2>
-          <div className='whitespace-pre-wrap'>{data.text}</div>
+          <div className='whitespace-pre-wrap text-sm'>{data.text}</div>
         </section>
       </section>
     </article>

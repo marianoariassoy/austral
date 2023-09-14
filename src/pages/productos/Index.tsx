@@ -24,13 +24,6 @@ const Index = () => {
     menu?.classList.add('bg-white')
   }, [data])
 
-  if (loading)
-    return (
-      <div>
-        <Loader />
-      </div>
-    )
-
   const properties = {
     prevArrow: (
       <button className='text-primary ml-8 hover:-translate-x-0.5 transition-all back-button'>
@@ -51,14 +44,20 @@ const Index = () => {
   return (
     <Layout>
       <div className='text-primary'>
-        <Slide {...properties}>
-          {data.map(item => (
-            <ProductosItem
-              key={item.id}
-              data={item}
-            />
-          ))}
-        </Slide>
+        {loading ? (
+          <div className='h-screen w-full flex items-center justify-center'>
+            <Loader />
+          </div>
+        ) : (
+          <Slide {...properties}>
+            {data.map(item => (
+              <ProductosItem
+                key={item.id}
+                data={item}
+              />
+            ))}
+          </Slide>
+        )}
       </div>
     </Layout>
   )
