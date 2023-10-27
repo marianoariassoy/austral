@@ -21,7 +21,7 @@ export const nav = [
   },
   {
     id: 5,
-    title: 'Nuestros Clientes',
+    title: 'Nuestros Proyectos',
     path: '#clientes'
   },
   {

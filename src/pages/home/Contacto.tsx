@@ -16,7 +16,18 @@ const Contact = () => {
 
         <div className='mt-8'>
           <span className='block'>
-            <strong>Tel.</strong> +54 (387) 2437743
+            <strong>Tel.</strong> +54 387 2437743
+          </span>
+          <span className='block'>
+            <strong>Cel.</strong>{' '}
+            <a
+              href='https://wa.me/5493875040576'
+              target='_blank'
+              rel='noreferrer'
+              className='hover:underline'
+            >
+              +54 9 387 504-0576
+            </a>
           </span>
           <span className='block'>
             <strong>Dir.</strong> O’higgins N° 1340

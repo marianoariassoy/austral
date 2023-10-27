@@ -102,14 +102,14 @@ const Header = () => {
             <li>
               {isActiveVentilacion || isActiveAire ? (
                 <Link href='/clientes'>
-                  <a className='hover-underline-animation'>Nuestros Clientes</a>
+                  <a className='hover-underline-animation'>Nuestros Proyectos</a>
                 </Link>
               ) : (
                 <a
                   href='#clientes'
                   className='scroll hover-underline-animation'
                 >
-                  Nuestros Clientes
+                  Nuestros Proyectos
                 </a>
               )}
             </li>

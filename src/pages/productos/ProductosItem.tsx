@@ -33,7 +33,7 @@ const ProductosItem = ({ data }) => {
           <h3 className='text-secondary'>
             <strong>Características</strong>
           </h3>
-          <p className='text-wrap text-base whitespace-pre-wrap text-sm'>{data.text}</p>
+          <p className='text-wrap whitespace-pre-wrap text-sm'>{data.text}</p>
         </section>
       </section>
     </article>

@@ -24,7 +24,7 @@ const Home = () => {
       className='section'
       id='home'
     >
-      <div className='text-wrap max-w-4xl px-8 lg:px-24 py-12 pt-48 text-white text-wrap'>
+      <div className='text-wrap max-w-4xl px-8 lg:px-24 py-12 pt-36 lg:pt-48 text-white text-wrap'>
         {!loadingTexts && <TextHTML text={dataTexts[0].text} />}
       </div>
       <div className='absolute z-30 left-0 px-8 pt-4 lg:px-24'>
@@ -46,7 +46,7 @@ const Home = () => {
 
       <Whatsapp />
 
-      <div className='bg-primary h-2/3 lg:h-screen w-full absolute top-0 -z-10'>
+      <div className='bg-primary h-4/5 lg:h-screen w-full absolute top-0 -z-10'>
         <div className='absolute box-top text-white z-20'></div>
         <div className='absolute box-bottom flex flex-col items-center text-primary'>
           <div className='mb-12 box'></div>
