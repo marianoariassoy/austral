@@ -16,16 +16,21 @@ export const nav = [
   },
   {
     id: 4,
+    title: 'Obras',
+    path: '#obras'
+  },
+  {
+    id: 5,
     title: 'Servicios',
     path: '#servicios'
   },
   {
-    id: 5,
+    id: 6,
     title: 'Nuestros Proyectos',
     path: '#clientes'
   },
   {
-    id: 6,
+    id: 7,
     title: 'Contacto',
     path: '#contacto'
   }

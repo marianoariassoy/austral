@@ -1,9 +1,15 @@
 import { Logo, Down } from '../icons/icons'
 import Social from '../components/Social'
-import { Link, useRoute } from 'wouter'
+import { Link, useLocation } from 'wouter'
+import { useEffect, useState } from 'react'
+
 const Header = () => {
-  const [isActiveVentilacion] = useRoute('/ventilacion')
-  const [isActiveAire] = useRoute('/aire-acondicionado')
+  const [home, setHome] = useState(true)
+  const location = useLocation()[0]
+
+  useEffect(() => {
+    location === '/' ? setHome(true) : setHome(false)
+  }, [location])
 
   const OpenMenu = () => {
     document.querySelector('.nav-menu')?.classList.toggle('active')
@@ -17,7 +23,7 @@ const Header = () => {
   return (
     <section className='fixed w-full px-8 lg:px-16 py-12 flex justify-between text-white z-50 bg-primary transition-all overflow-hidden'>
       <div>
-        {isActiveVentilacion || isActiveAire ? (
+        {!home ? (
           <Link href='/home'>
             <a className='hover:blur-sm logo'>
               <Logo />
@@ -36,7 +42,7 @@ const Header = () => {
         <nav className='hidden lg:inline-block nav-main'>
           <ul className='flex gap-x-8 font-secondary'>
             <li>
-              {isActiveVentilacion || isActiveAire ? (
+              {!home ? (
                 <Link href='/home'>
                   <a className='hover-underline-animation'>Home</a>
                 </Link>
@@ -50,7 +56,7 @@ const Header = () => {
               )}
             </li>
             <li>
-              {isActiveVentilacion || isActiveAire ? (
+              {!home ? (
                 <Link href='/somosaustral'>
                   <a className='hover-underline-animation'>Somos Austral</a>
                 </Link>
@@ -77,16 +83,23 @@ const Header = () => {
               <div className='submenu-item absolute hidden'>
                 <div className='flex flex-col gap-y-1 mt-1 items-start'>
                   <Link href='/ventilacion'>
-                    <a className={` ${isActiveVentilacion ? 'nav-active' : 'hover:opacity-70'}`}>Ventilación</a>
+                    <a className={`${location === '/ventilacion' ? 'nav-active' : 'hover:opacity-70'}`}>Ventilación</a>
                   </Link>
                   <Link href='/aire-acondicionado'>
-                    <a className={` ${isActiveAire ? 'nav-active' : 'hover:opacity-70'}`}>Aire Acondicionado</a>
+                    <a className={`${location === '/aire-acondicionado' ? 'nav-active' : 'hover:opacity-70'}`}>
+                      Aire Acondicionado
+                    </a>
                   </Link>
                 </div>
               </div>
             </li>
             <li>
-              {isActiveVentilacion || isActiveAire ? (
+              <Link href='/obras'>
+                <a className={`${location === '/obras' ? 'nav-active' : 'hover-underline-animation'}`}>Obras</a>
+              </Link>
+            </li>
+            <li>
+              {!home ? (
                 <Link href='/servicios'>
                   <a className='hover-underline-animation'>Servicios</a>
                 </Link>
@@ -100,7 +113,7 @@ const Header = () => {
               )}
             </li>
             <li>
-              {isActiveVentilacion || isActiveAire ? (
+              {!home ? (
                 <Link href='/clientes'>
                   <a className='hover-underline-animation'>Nuestros Proyectos</a>
                 </Link>
@@ -114,7 +127,7 @@ const Header = () => {
               )}
             </li>
             <li className='mx-8'>
-              {isActiveVentilacion || isActiveAire ? (
+              {!home ? (
                 <Link href='/contacto'>
                   <a className='hover-underline-animation'>Contacto</a>
                 </Link>

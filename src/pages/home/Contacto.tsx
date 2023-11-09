@@ -30,7 +30,7 @@ const Contact = () => {
             </a>
           </span>
           <span className='block'>
-            <strong>Dir.</strong> O’higgins N° 1340
+            <strong>Dir.</strong> Av. Paraguay N° 1285 1° Piso
           </span>
           <span className='block'>Salta - Argentina</span>
         </div>

@@ -11,7 +11,7 @@ const ProductosItem = ({ data }) => {
   const { data: dataImages, loading: loadingImages } = useFetch(`/imagenes/${data.id}`) as DataProps
 
   return (
-    <article className='h-full lg:flex '>
+    <article className='h-full lg:flex'>
       <section className='w-full aspect-square lg:aspect-auto lg:w-2/5 lg:h-screen relative'>
         {!loadingImages && <Slider data={dataImages} />}
       </section>

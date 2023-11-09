@@ -1,10 +1,15 @@
 import { nav } from '../data/data'
 import { Down } from '../icons/icons'
-import { Link, useRoute } from 'wouter'
+import { Link, useLocation } from 'wouter'
+import { useEffect, useState } from 'react'
 
 const Menu = () => {
-  const [isActiveVentilacion] = useRoute('/ventilacion')
-  const [isActiveAire] = useRoute('/aire-acondicionado')
+  const location = useLocation()[0]
+  const [home, setHome] = useState(true)
+
+  useEffect(() => {
+    location === '/' ? setHome(true) : setHome(false)
+  }, [location])
 
   const closeMenu = () => {
     document.querySelector('.nav-menu')?.classList.toggle('active')
@@ -19,7 +24,7 @@ const Menu = () => {
       <ul className='flex flex-col gap-y-4 font-secondary text-xl'>
         {nav.map(item => (
           <li key={item.id}>
-            {isActiveVentilacion || isActiveAire ? (
+            {!home ? (
               <Link href={`/${item.path?.substring(1)}`}>
                 <a className='flex justify-center hover:text-black'>
                   <div className='flex items-center gap-x-2'>
@@ -41,10 +46,10 @@ const Menu = () => {
             {item.id === 3 && (
               <div className='flex flex-col'>
                 <Link href='/ventilacion'>
-                  <a className={`${isActiveVentilacion ? 'nav-active' : 'hover-underline-animation'}`}>Ventilación</a>
+                  <a className={`${location === '/ventilacion' ? 'nav-active' : ''}`}>Ventilación</a>
                 </Link>
                 <Link href='/aire-acondicionado'>
-                  <a className={`${isActiveAire ? 'nav-active' : 'hover-underline-animation'}`}>Aire Acondicionado</a>
+                  <a className={`${location === '/aire-acondicionado' ? 'nav-active' : ''}`}>Aire Acondicionado</a>
                 </Link>
               </div>
             )}
